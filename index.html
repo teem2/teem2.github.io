@@ -26,10 +26,10 @@
         <h1>
 <a id="api-docs" class="anchor" href="#api-docs" aria-hidden="true"><span class="octicon octicon-link"></span></a>api docs</h1>
 
-<p><a href="http://teem2.github.io/dreem/docs/api/">http://teem2.github.io/dreem/docs/api/</a></p>
+<p>Api docs can be found here: <a href="http://teem2.github.io/dreem/docs/api/">http://teem2.github.io/dreem/docs/api/</a></p>
 
-<h2>
-<a id="getting-started-with-dreem" class="anchor" href="#getting-started-with-dreem" aria-hidden="true"><span class="octicon octicon-link"></span></a>getting started with dreem</h2>
+<h1>
+<a id="getting-started-with-dreem" class="anchor" href="#getting-started-with-dreem" aria-hidden="true"><span class="octicon octicon-link"></span></a>getting started with dreem</h1>
 
 <p>It is quick and easy to get started writing your dreem application, first install <a href="http://nodejs.org/download/">Node.js v0.10.x</a> and <a href="http://rubyinstaller.org/downloads/">Ruby 2.x</a>, and then clone the repo:</p>
 
@@ -55,13 +55,13 @@
 
 <p>That's all you need to do to get set up to build a dreem application. There are many sample files in the root directory that you can reference to get familiar with the language. You will also want to build the API documentation to run on your machine as it is currently not hosted anywhere on the web. This is a simple process, and instructions are included below.</p>
 
-<h2>
-<a id="getting-started-on-windows" class="anchor" href="#getting-started-on-windows" aria-hidden="true"><span class="octicon octicon-link"></span></a>getting started on Windows</h2>
+<h3>
+<a id="getting-started-on-windows" class="anchor" href="#getting-started-on-windows" aria-hidden="true"><span class="octicon octicon-link"></span></a>getting started on Windows</h3>
 
 <p>On some Windows installations it may ne necessary to install the ruby <a href="https://github.com/oneclick/rubyinstaller/wiki/Development-Kit">Development Kit, described here</a>.  </p>
 
-<h2>
-<a id="adding-your-own-dreem-code" class="anchor" href="#adding-your-own-dreem-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>adding your own dreem code</h2>
+<h1>
+<a id="adding-your-own-dreem-code" class="anchor" href="#adding-your-own-dreem-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>adding your own dreem code</h1>
 
 <p>You can put your dreem files right in the root dreem directory or a subdirectory to get started, or use a symlink to another directory, for example this:</p>
 
@@ -77,8 +77,8 @@
 
 <p>Will mount the <code>../apps/demos/</code> directory under the <code>/projects</code> url <a href="http://localhost:8080/projects/">http://localhost:8080/projects/</a>.  </p>
 
-<h2>
-<a id="loading-external-components" class="anchor" href="#loading-external-components" aria-hidden="true"><span class="octicon octicon-link"></span></a>loading external components</h2>
+<h1>
+<a id="loading-external-components" class="anchor" href="#loading-external-components" aria-hidden="true"><span class="octicon octicon-link"></span></a>loading external components</h1>
 
 <p>If you have additional external components to load, place them all in a top-level directory and use the <code>DREEM_COMPONENTS_ROOT</code> variable to indicate where to find them:</p>
 
@@ -87,13 +87,10 @@
 
 <p>Additional server settings can be found on the <a href="https://github.com/teem2/server">teemserver README</a>.</p>
 
-<h2>
-<a id="installing-the-sublime-plugin" class="anchor" href="#installing-the-sublime-plugin" aria-hidden="true"><span class="octicon octicon-link"></span></a>installing the sublime plugin</h2>
+<h1>
+<a id="building-the-documentation" class="anchor" href="#building-the-documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>building the documentation</h1>
 
-<p>For Sublime Text, use the preferences -&gt; browse packages menu, back out a folder and browse to 'Installed Packages', then copy /tools/Dreem.sublime-package there.</p>
-
-<h2>
-<a id="building-the-documentation" class="anchor" href="#building-the-documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>building the documentation</h2>
+<hr>
 
 <p>The API docs are always available <a href="http://teem2.github.io/dreem/docs/api/">here</a>, but can be built manually with <a href="https://github.com/senchalabs/jsduck">https://github.com/senchalabs/jsduck</a>. Install jsduck as a ruby gem using bundler by running the following:</p>
 
@@ -111,10 +108,13 @@ bundle install
 <pre><code>./bin/builddocs
 </code></pre>
 
-<h2>
-<a id="building-snapsvg" class="anchor" href="#building-snapsvg" aria-hidden="true"><span class="octicon octicon-link"></span></a>building Snap.svg</h2>
+<h1>
+<a id="building-snapsvg" class="anchor" href="#building-snapsvg" aria-hidden="true"><span class="octicon octicon-link"></span></a>building Snap.svg</h1>
 
 <p>The art component uses a customized version of Snap.svg to display svg files. The changes allow any frame between two paths to be displayed. See <a href="https://github.com/teem2/Snap.svg">https://github.com/teem2/Snap.svg</a> for build instructions. Once built, a copy of <a href="https://github.com/teem2/Snap.svg/blob/master/dist/snap.svg-min.js">https://github.com/teem2/Snap.svg/blob/master/dist/snap.svg-min.js</a> should be copied into this repository at <a href="https://github.com/teem2/dreem/tree/master/lib">https://github.com/teem2/dreem/tree/master/lib</a>.</p>
+
+<h1>
+<a id="testing-dreem" class="anchor" href="#testing-dreem" aria-hidden="true"><span class="octicon octicon-link"></span></a>testing dreem</h1>
 
 <h2>
 <a id="running-smoke-tests" class="anchor" href="#running-smoke-tests" aria-hidden="true"><span class="octicon octicon-link"></span></a>running smoke tests</h2>
