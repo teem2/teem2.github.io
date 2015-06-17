@@ -1,1 +1,198 @@
-Hello world.
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <title>dreem  by teem2</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>dreem </h1>
+        <h2>(by teem)</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/teem2" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h2>
+<a id="getting-started-with-dreem" class="anchor" href="#getting-started-with-dreem" aria-hidden="true"><span class="octicon octicon-link"></span></a>getting started with dreem</h2>
+
+<p>It is quick and easy to get started writing your dreem application, first install <a href="http://nodejs.org/download/">Node.js v0.10.x</a> and <a href="http://rubyinstaller.org/downloads/">Ruby 2.x</a>, and then clone the repo:</p>
+
+<pre><code>git clone https://github.com/teem2/dreem.git
+</code></pre>
+
+<p>After cloning the project, install the required node modules:</p>
+
+<pre><code>npm install
+</code></pre>
+
+<p>And run bundler (install bundler with <code>gem install bundler</code> if required):</p>
+
+<pre><code>bundle install
+</code></pre>
+
+<p>You will need to serve the dreem files through a web server to satisfy the browser's same-origin policy.  From within the dreem root directory just run:</p>
+
+<pre><code>./bin/teemserver
+</code></pre>
+
+<p>This will turn that directory into a webserver and allow you to run any of the example files on localhost, such as <a href="http://localhost:8080/examples/spirallayout.html">http://localhost:8080/examples/spirallayout.html</a></p>
+
+<p>That's all you need to do to get set up to build a dreem application. There are many sample files in the root directory that you can reference to get familiar with the language. You will also want to build the API documentation to run on your machine as it is currently not hosted anywhere on the web. This is a simple process, and instructions are included below.</p>
+
+<h2>
+<a id="getting-started-on-windows" class="anchor" href="#getting-started-on-windows" aria-hidden="true"><span class="octicon octicon-link"></span></a>getting started on Windows</h2>
+
+<p>On some Windows installations it may ne necessary to install the ruby <a href="https://github.com/oneclick/rubyinstaller/wiki/Development-Kit">Development Kit, described here</a>.  </p>
+
+<h2>
+<a id="adding-your-own-dreem-code" class="anchor" href="#adding-your-own-dreem-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>adding your own dreem code</h2>
+
+<p>You can put your dreem files right in the root dreem directory or a subdirectory to get started, or use a symlink to another directory, for example this:</p>
+
+<pre><code>ln -s ~/dev/mydreemapp ./mydreemapp
+</code></pre>
+
+<p>Allow you to access your files from <code>/mydreemapp/</code> here: <a href="http://localhost:8080/mydreemapp/">http://localhost:8080/mydreemapp/</a></p>
+
+<p>If you would like a pace from which to serve Dreem projects without placing them in the root, you can use the special <code>/projects</code> path by specifing the <code>DREEM_PROJECTS_ROOT</code> environment variable on the command line.  For example:</p>
+
+<pre><code>DREEM_PROJECTS_ROOT="../apps/demos/" ./bin/teemserver
+</code></pre>
+
+<p>Will mount the <code>../apps/demos/</code> directory under the <code>/projects</code> url <a href="http://localhost:8080/projects/">http://localhost:8080/projects/</a>.  </p>
+
+<h2>
+<a id="loading-external-components" class="anchor" href="#loading-external-components" aria-hidden="true"><span class="octicon octicon-link"></span></a>loading external components</h2>
+
+<p>If you have additional external components to load, place them all in a top-level directory and use the <code>DREEM_COMPONENTS_ROOT</code> variable to indicate where to find them:</p>
+
+<pre><code>DREEM_COMPONENTS_ROOT="../workspace/components/" ./bin/teemserver
+</code></pre>
+
+<p>Additional server settings can be found on the <a href="https://github.com/teem2/server">teemserver README</a>.</p>
+
+<h2>
+<a id="installing-the-sublime-plugin" class="anchor" href="#installing-the-sublime-plugin" aria-hidden="true"><span class="octicon octicon-link"></span></a>installing the sublime plugin</h2>
+
+<p>For Sublime Text, use the preferences -&gt; browse packages menu, back out a folder and browse to 'Installed Packages', then copy /tools/Dreem.sublime-package there.</p>
+
+<h2>
+<a id="building-the-documentation" class="anchor" href="#building-the-documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>building the documentation</h2>
+
+<p>The API docs are always available <a href="http://teem2.github.io/dreem/docs/api/">here</a>, but can be built manually with <a href="https://github.com/senchalabs/jsduck">https://github.com/senchalabs/jsduck</a>. Install jsduck as a ruby gem using bundler by running the following:</p>
+
+<pre><code>gem install bundler
+bundle install
+</code></pre>
+
+<p>If you are on mac 10.9.x and you get an error concerning nokogiri, try this
+    sudo gem install nokogiri -- --with-iconv-dir=/usr/lib</p>
+
+<p>If you are using rvm or similar your gems will be installed in a gemset called 'dreem'.</p>
+
+<p>With jsduck installed run:</p>
+
+<pre><code>./bin/builddocs
+</code></pre>
+
+<h2>
+<a id="building-snapsvg" class="anchor" href="#building-snapsvg" aria-hidden="true"><span class="octicon octicon-link"></span></a>building Snap.svg</h2>
+
+<p>The art component uses a customized version of Snap.svg to display svg files. The changes allow any frame between two paths to be displayed. See <a href="https://github.com/teem2/Snap.svg">https://github.com/teem2/Snap.svg</a> for build instructions. Once built, a copy of <a href="https://github.com/teem2/Snap.svg/blob/master/dist/snap.svg-min.js">https://github.com/teem2/Snap.svg/blob/master/dist/snap.svg-min.js</a> should be copied into this repository at <a href="https://github.com/teem2/dreem/tree/master/lib">https://github.com/teem2/dreem/tree/master/lib</a>.</p>
+
+<h2>
+<a id="running-smoke-tests" class="anchor" href="#running-smoke-tests" aria-hidden="true"><span class="octicon octicon-link"></span></a>running smoke tests</h2>
+
+<p>The smoke tests docs are run with <a href="http://phantomjs.org/">http://phantomjs.org/ 1.9.8</a>, so you'll need to install it with:</p>
+
+<pre><code>npm install phantomjs@1.9.8
+</code></pre>
+
+<p>(note: phantomjs2.0 currently cannot run all the tests successfully, use no later than 1.9.8). After you've installed it, run:</p>
+
+<pre><code>phantomjs ./bin/phantomrunner.js
+</code></pre>
+
+<p>If you get RESOURCE ERROR messages, try specifying a different timeout argument. The smaller the number, the faster the tests will run:</p>
+
+<pre><code>phantomjs ./bin/phantomrunner.js 100
+</code></pre>
+
+<p>Finally, you may get better performance if you utilize phantom's disk cache:</p>
+
+<pre><code>phantomjs ./bin/phantomrunner.js 100 --disk-cache
+</code></pre>
+
+<p>You can also target a specific smoke test by naming it on the commandline</p>
+
+<pre><code>phantomjs ./bin/phantomrunner.js art.html
+</code></pre>
+
+<h2>
+<a id="running-the-component-tests" class="anchor" href="#running-the-component-tests" aria-hidden="true"><span class="octicon octicon-link"></span></a>running the component tests</h2>
+
+<p>The components are tested with rspec and capybara. You will need to install the required gems to run them. If you haven't already:</p>
+
+<pre><code>gem install bundler
+bundle install
+</code></pre>
+
+<p>Now to run the specs run</p>
+
+<pre><code>rspec
+</code></pre>
+
+<p>If you see an error like:</p>
+
+<pre><code>Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
+
+    ruby extconf.rb
+Command 'qmake -spec macx-g++ ' not available
+
+Makefile not found
+
+Gem files will remain installed in /Users/maxcarlson/.rvm/gems/ruby-2.0.0-p481@dreem/gems/capybara-webkit-1.3.0 for inspection.
+Results logged to /Users/maxcarlson/.rvm/gems/ruby-2.0.0-p481@dreem/extensions/x86_64-darwin-13/2.0.0-static/capybara-webkit-1.3.0/gem_make.out
+
+An error occurred while installing capybara-webkit (1.3.0), and Bundler cannot continue.
+Make sure that `gem install capybara-webkit -v '1.3.0'` succeeds before bundling.
+</code></pre>
+
+<p>Per <a href="http://stackoverflow.com/questions/11354656/error-error-error-installing-capybara-webkit">http://stackoverflow.com/questions/11354656/error-error-error-installing-capybara-webkit</a> if you are in Ubuntu:</p>
+
+<pre><code>sudo apt-get install qt4-dev-tools libqt4-dev libqt4-core libqt4-gui
+</code></pre>
+
+<p>If you are on Mac</p>
+
+<pre><code>brew install qt
+</code></pre>
+
+<p>Then run this again:</p>
+
+<pre><code>bundle install    
+</code></pre>
+
+<p>Windows users: capybara-webkit can only install on a 32-bit version of Windows. See <a href="https://github.com/thoughtbot/capybara-webkit#windows-support">https://github.com/thoughtbot/capybara-webkit#windows-support</a></p>
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>
